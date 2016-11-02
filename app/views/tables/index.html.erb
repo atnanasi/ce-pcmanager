@@ -1,0 +1,29 @@
+<h1>IPアドレス管理表</h1>
+
+<table border="1">
+  <tr>
+    <th>IPアドレス</th>
+    <th>マシン名</th>
+    <th>MACアドレス</th>
+    <th>管理者</th>
+    <th>日付</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tables.each do |table| %>
+  <tr>
+    <td><%= table.ipaddress %></td>
+    <td><%= table.name %></td>
+    <td><%= table.macaddress %></td>
+    <td><%= table.admin %></td>
+    <td><%= table.updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+    <td><%= link_to '編集', edit_table_path(table) %></td>
+    <td><%= link_to '削除', table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '追加', new_table_path %>

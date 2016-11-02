@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>IPアドレス:</b>
+  <%= @table.ipaddress %>
+</p>
+
+<p>
+  <b>名前:</b>
+  <%= @table.name %>
+</p>
+
+<p>
+  <b>MACアドレス:</b>
+  <%= @table.macaddress %>
+</p>
+
+<p>
+  <b>管理者:</b>
+  <%= @table.admin %>
+</p>
+
+
+<%= link_to '編集', edit_table_path(@table) %> |
+<%= link_to '戻る', tables_path %>
